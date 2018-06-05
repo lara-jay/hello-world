@@ -1,0 +1,48 @@
+<head>
+  <title>Summer of Code 2018</title>
+  <!--initial sloppy code by Lara-Jay, made in codepen.io--> 
+</head>
+
+<body>
+  <form>
+    <formgroup>
+      <label for="experience">
+       <h1>
+         1 Million Women to Tech
+       </h1>
+      </label>
+      <select id="experienceList" type="select" onchange="myFunction(this.value)">
+       <options>
+         <option>How much experience do you have?</option>
+         <option value="none">None, I want to learn to code!</option>
+         <option value="some">I'm already a coder</option>
+       </options>
+      </select>
+      <div>
+
+        <ul id="output">
+        </ul>
+      </div>
+      <ul>
+        <li>Free Courses</li>
+        <li>Online - Worldwide</li>
+        <li>Pre-Registration until July 1<sup>st</sup></li>
+      </ul>
+    </formgroup>
+  </form>
+  <script>
+    var experience = {
+  none: ["Join Us", " Win Hackathons, Earn Prizes", " Learn to Code"],
+  some: ["Join Us Anyway", " Win Hackathons, Earn Prizes", " Find Jobs"]
+};
+
+function myFunction(codeExperience) {
+  document.getElementById("output").innerHTML = codeExperience;
+  console.log(codeExperience);
+  if (codeExperience == "none") {
+    document.getElementById("output").innerHTML = experience.none;
+  } else if (codeExperience == "some") {
+    document.getElementById("output").innerHTML = experience.some;
+  }
+}</script>
+</body>
